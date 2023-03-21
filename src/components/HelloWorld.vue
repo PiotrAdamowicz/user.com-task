@@ -1,6 +1,6 @@
 <template>
-  <div class="py-10 px-0 mx-0 w-full" >
-      <v-card>
+  <div class="py-10 px-0 h-screen w-full" >
+      <v-card class="mb-20">
         <v-toolbar class="color font-sans text-white/90">
           <template v-slot:extension>
             <v-tabs
@@ -34,7 +34,7 @@
             :key="item.key"
             :value="item.key"
           >
-            <div flat class="color py-10 flex flex-row justify-center gap-x-1 ">
+            <div flat class="color py-10 flex flex-row justify-center gap-x-4 ">
               <v-card
                 v-for="(card) in item.cards"
                 :key="card.title"
@@ -42,7 +42,7 @@
                 :title="card.title"
                 :subtitle="item.title"
                 :text="item.text"
-                class="card-color border-card rounded text-white/90"
+                class="card-color border-card rounded-md text-white/90"
                 >
 
                 <p 
@@ -83,114 +83,13 @@
 }
 </style>
 <script >
+import {items} from "../fixtures/tabs"; 
  export default {
     data () {
       return {
         tab: false,
-        items: [
-          {
-            key:'Observe',
-            text:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, reiciendis?Lorem10 & Recordings",
-            subtitle:"",
-            cards:[
-              {
-                title:"Pay as you go",
-                subtitle:"Recruit from Hotjar's participant pool, only. For those that don't do research often.",
-                price:"€90",
-                time:"/ credit",
-                text:"Up to 20 monthly",
-                perks:[
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  }
-                ]
-              },
-              {
-                title:"Basic",
-                subtitle:"Recruit your own network, only. Get started with Engage essentials. ",
-                price:"€0",
-                time:"/ forever",
-                text:"Up to 20 monthly",
-                 perks:[
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  }
-                ]
-              },
-              {
-                title:"Plus",
-                subtitle:"Recruit your own network, only. For small teams who regularly gather and analyze user feedback.",
-                price:"€72",
-                time:"/ month",
-                text:"Up to 20 monthly",
-                 perks:[
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  }
-                ]
-              },
-              {
-                title:"Business",
-                subtitle:"Recruit your own network, only. For teams with a strong focus on UX research.",
-                price:"€112",
-                time:"/ month",
-                text:"Up to 20 monthly",
-                 perks:[
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  },
-                  {
-                    title:"Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                  }
-                ]
-              }
-            ],
-            icon:"mdi-phone"
-          },
-           {
-            key:'Ask',
-            text:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, reiciendis?Lorem10 & Feedback",
-            subtitle:"",
-            cards:[],
-            icon:"mdi-phone"
-          },
-           {
-            key:'Engage',
-            text:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, reiciendis?Lorem10 interviews",
-            subtitle:"",
-            cards:[],
-            icon:"mdi-phone"
-          },
-           {
-            key:'Custom package',
-            text:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, reiciendis?Lorem10",
-            subtitle:"",
-            cards:[],
-            icon:"mdi-phone"
-          },
-        ],
+        items
        }
-    },
+    }
   }
 </script>
